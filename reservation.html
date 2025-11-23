@@ -3,164 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reservasi - Kopi Santai</title>
+  <title>Kopi Santai - Reservasi</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-  <!-- HEADER -->
+
   <header>
     <div class="container header-content">
-      <div class="logo">
-        <h1>Kopi Santai</h1>
-        <p>Nikmati Setiap Tegukan</p>
+      <div class="logo-section">
+        <h1 class="logo">KS</h1>
+        <p class="tagline">Nikmati Setiap Tegukan</p>
       </div>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="about.html">Tentang Kami</a>
-        <a href="reservation.html" style="color: #8B4513;">Reservasi</a>
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="reservation.html" class="active">reservation</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <!-- RESERVATION SECTION -->
-  <section class="reservation-section">
+  <!-- Reservation Info Section -->
+  <section class="reservation-info">
     <div class="container">
-      <h2 class="section-title">Reservasi Meja</h2>
+      <h2>Reservasi Meja</h2>
+      <p>Untuk kenyamanan Anda, lakukan reservasi meja terlebih dahulu. Kami akan menyiapkan tempat terbaik sesuai kebutuhan Anda.</p>
+      <h3>Persyaratan Reservasi:</h3>
+      <ul>
+        <li>Reservasi maksimal 7 hari sebelumnya</li>
+        <li>Konfirmasi akan dikirim via email atau WhatsApp</li>
+        <li>Hadir maksimal 15 menit dari waktu reservasi</li>
+        <li>Reservasi grup > 8 orang, hubungi kami langsung</li>
+        <li>Pembatalan maksimal 3 jam sebelum kunjungan</li>
+      </ul>
+    </div>
+  </section>
 
-      <div class="reservation-info">
-        <p>Selamat datang di sistem reservasi <strong>Kopi Santai</strong>! Pastikan kenyamanan Anda dengan memesan meja terlebih dahulu.</p>
-        <p>Reservasi cocok untuk berbagai keperluan — mulai dari rapat, perayaan kecil, hingga sekadar bersantai bersama teman.</p>
+ <div class="two-column-layout">
+      <div class="form-column">
+        <h3>Form Reservasi</h3>
+        <form>
+          <fieldset>
+            <legend>Informasi Pribadi</legend>
+            <label>Nama Lengkap* <input type="text" required /></label>
+            <label>Email* <input type="email" required /></label>
+            <label>No. Telepon* <input type="tel" required /></label>
+          </fieldset>
 
-        <h3>Persyaratan Reservasi:</h3>
-        <ul>
-          <li>Reservasi dilakukan minimal 2 jam sebelum kedatangan.</li>
-          <li>Masa tunggu maksimal 15 menit dari waktu reservasi.</li>
-          <li>Grup lebih dari 6 orang harap menghubungi langsung.</li>
-          <li>Pembatalan maksimal 1 jam sebelum waktu kedatangan.</li>
-        </ul>
-      </div>
-
-      <div class="form-container">
-        <!-- FORM -->
-        <div class="reservation-form">
-          <form>
-            <fieldset>
-              <legend>Informasi Pribadi</legend>
-              <label for="fullname">Nama Lengkap *</label>
-              <input type="text" id="fullname" name="fullname" required>
-
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required>
-
-              <label for="phone">No. Telepon *</label>
-              <input type="tel" id="phone" name="phone" required placeholder="+62 ...">
-            </fieldset>
-
-            <fieldset>
-              <legend>Detail Reservasi</legend>
-              <label for="date">Tanggal *</label>
-              <input type="date" id="date" name="date" required>
-
-              <label for="time">Waktu *</label>
-              <input type="time" id="time" name="time" required>
-
-              <label for="people">Jumlah Orang *</label>
-              <select id="people" name="people" required>
-                <option value="">Pilih jumlah orang</option>
-                <option value="1">1 Orang</option>
-                <option value="2">2 Orang</option>
-                <option value="3">3 Orang</option>
-                <option value="4">4 Orang</option>
-                <option value="5">5 Orang</option>
-                <option value="6">6 Orang</option>
-                <option value="7">7 Orang</option>
-                <option value="8">8 Orang</option>
-                <option value="9">9 Orang</option>
-                <option value="10">10 Orang</option>
+          <fieldset>
+            <legend>Detail Reservasi</legend>
+            <label>Tanggal* <input type="date" required /></label>
+            <label>Waktu* <input type="time" required /></label>
+            <label>Jumlah Orang* 
+              <select required>
+                <option value="">Pilih</option>
+                <option>1</option><option>2</option><option>3</option>
+                <option>4</option><option>5</option><option>6</option>
               </select>
-
-              <label for="tableType">Tipe Meja *</label>
-              <select id="tableType" name="tableType" required>
-                <option value="">Pilih tipe meja</option>
+            </label>
+            <label>Tipe Meja* 
+              <select required>
+                <option value="">Pilih</option>
                 <option value="regular">Regular</option>
                 <option value="window">Window Seat</option>
                 <option value="private">Private Room</option>
               </select>
-            </fieldset>
+            </label>
+          </fieldset>
 
-            <fieldset>
-              <legend>Catatan Tambahan</legend>
-              <label for="notes">Catatan</label>
-              <textarea id="notes" name="notes" rows="4" placeholder="Contoh: perayaan ulang tahun, alergi makanan, dll."></textarea>
+          <fieldset>
+            <legend>Catatan</legend>
+            <label>Catatan Khusus <textarea rows="4"></textarea></label>
+            <label><input type="checkbox" required /> Saya menyetujui syarat dan ketentuan</label>
+          </fieldset>
 
-              <label>
-                <input type="checkbox" required> Saya menyetujui syarat dan ketentuan reservasi *
-              </label>
-            </fieldset>
+          <button type="submit" class="btn btn-primary">Kirim Reservasi</button>
+        </form>
+      </div>
 
-            <button type="submit" class="submit-btn">Kirim Reservasi</button>
-          </form>
-        </div>
+      <!-- Info Kolom Kanan -->
+      <div class="column info-column">
+        <h3>Reservasi via Telepon / WhatsApp</h3>
+        <p>Hubungi kami langsung untuk pertanyaan atau reservasi mendesak:</p>
+        <p><strong>📞 Telepon:</strong> +62 895-4111 / +62 812-6031</p>
+        <p><strong>💬 WhatsApp:</strong> +62 895-4111 / +62 812-6031</p>
+        <p><strong>📧 Email:</strong> calvinsahatdua1@gmail.com / zbourlyn@gmail.com</p>
 
-        <!-- CONTACT ALTERNATIVE -->
-        <aside class="contact-alternative">
-          <h3>Butuh Bantuan?</h3>
-          <p>Hubungi kami melalui:</p>
+        <h4>Jam Operasional</h4>
+        <ul>
+          <li>Senin - Kamis: 07:00 - 22:00</li>
+          <li>Jumat - Sabtu: 07:00 - 23:00</li>
+          <li>Minggu: 08:00 - 22:00</li>
+        </ul>
 
-          <p><strong>Telepon:</strong> +62 8954111</p>
-          <p><strong>WhatsApp:</strong> +62 8126031</p>
-          <p><strong>Email:</strong> reservasi@kopisantai.com</p>
-
-          <div class="operational-hours">
-            <h4>Jam Operasional</h4>
-            <p>Senin - Kamis: 07:00 - 22:00</p>
-            <p>Jumat: 07:00 - 23:00</p>
-            <p>Sabtu - Minggu: 08:00 - 23:00</p>
-          </div>
-        </aside>
+        <h4>Lokasi</h4>
+        <p>Jl. Taman Kemang No.19, RT.14/RW.1, Bangka, Mampang Prpt., Jakarta Selatan</p>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-box">
-          <h3>Kelompok 11</h3>
-          <a href="#">105223022 - Calvin</a>
-          <a href="#">105223022 - Umran</a>
-        </div>
-
-        <div class="footer-box">
-          <h3>Menu Cepat</h3>
-          <a href="index.html">Home</a>
-          <a href="about.html">Tentang Kami</a>
-          <a href="menu.html">Menu</a>
-          <a href="reservation.html">Reservasi</a>
-        </div>
-
-        <div class="footer-box">
-          <h3>Kontak</h3>
-          <a href="tel:+628954111">+62 8954111</a>
-          <a href="tel:+628126031">+62 8126031</a>
-          <a href="mailto:calvinsahatdua1@gmail.com">calvinsahatdua1@gmail.com</a>
-          <a href="mailto:zbourlyn@gmail.com">zbourlyn@gmail.com</a>
-        </div>
-
-        <div class="footer-box">
-          <h3>Media Sosial</h3>
-          <a href="#">Instagram</a>
-          <a href="#">Facebook</a>
-          <a href="#">WhatsApp</a>
-        </div>
-      </div>
-
-      <div class="copyright">
-        <p>created by &copy; <span>mr. Calvin And mr. Umran</span> | all rights reserved</p>
-      </div>
+    <div class="copyright">
+      <p>2025 &copy; All rights reserved Kopi Santai</p>
+      <p>Kelompok 11 | Dibuat oleh Calvin & Umran</p>
     </div>
   </footer>
 </body>

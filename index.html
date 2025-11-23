@@ -3,122 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kopi Santai - Nikmati Setiap Tegukan</title>
+  <title>Kopi Santai - Home</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-
-  <!-- HEADER -->
   <header>
-    <div class="header-container">
-      <h1 class="logo">Kopi Santai</h1>
-      <p class="tagline">Nikmati Setiap Tegukan</p>
+    <div class="container header-content">
+      <div class="logo-section">
+        <h1 class="logo">KS</h1>
+        <p class="tagline">Nikmati Setiap Tegukan</p>
+      </div>
       <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="menu.html">Menu</a>
-        <a href="about.html">Tentang Kami</a>
-        <a href="reservation.html">Reservasi</a>
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="reservation.html">reservation</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Selamat Datang di Kopi Santai</h2>
-      <p>Tempat terbaik untuk menikmati kopi dan bersantai bersama teman</p>
-      <div class="hero-buttons">
-        <a href="menu.html" class="btn primary">Lihat Menu</a>
-        <a href="reservation.html" class="btn secondary">Reservasi</a>
+  <main>
+    <section class="hero-section">
+      <div class="hero-content container">
+        <div class="hero-text">
+          <h2>Selamat Datang di Kopi Santai</h2>
+          <p>Tempat terbaik untuk santai, ngobrol, dan kerja sambil ditemani secangkir kopi.</p>
+          <div class="hero-buttons">
+            <a href="menu.html" class="btn btn-primary">Lihat Menu</a>
+            <a href="reservation.html" class="btn btn-secondary">Reservasi</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="images/icon.png" alt="Kopi Santai" />
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MENU FAVORIT -->
-  <section class="menu-section">
-    <div class="container">
+    <section class="featured-menu-section container">
       <h2>Menu Favorit Kami</h2>
       <div class="menu-grid">
-        <div class="menu-item">
-          <img src="images/2image.jpg" alt="Espresso Santai">
-          <h3>Espresso Santai</h3>
-          <p class="price">Rp 25.000</p>
-          <p>Espresso kuat dengan crema sempurna dari biji pilihan.</p>
-        </div>
+        <article class="menu-card">
+          <img src="images/icon.png" alt="Original" />
+          <h3>Original</h3>
+          <p class="description">Kopi dengan rasa bold dan aroma khas dari tanah vulkanik.</p>
+          <div class="price-badge">
+            <strong class="price">Rp 25.000</strong>
+            <span class="label best">Best</span>
+          </div>
+        </article>
 
-        <div class="menu-item">
-          <img src="images/3image.jpg" alt="Cappuccino Harmony">
-          <h3>Cappuccino Harmony</h3>
-          <p class="price">Rp 32.000</p>
-          <p>Perpaduan espresso, susu steamed, dan foam lembut.</p>
-        </div>
+        <article class="menu-card">
+          <img src="images/icon.png" alt="Espresso" />
+          <h3>Espresso</h3>
+          <p class="description">Espresso kuat dari biji pilihan dengan crema sempurna.</p>
+          <div class="price-badge">
+            <strong class="price">Rp 28.000</strong>
+            <span class="label best">Best</span>
+          </div>
+        </article>
 
-        <div class="menu-item">
-          <img src="images/4image.jpg" alt="Iced Caramel Macchiato">
-          <h3>Iced Caramel Macchiato</h3>
-          <p class="price">Rp 35.000</p>
-          <p>Kopi dingin dengan rasa caramel manis, cocok untuk cuaca panas.</p>
-        </div>
+        <article class="menu-card">
+          <img src="images/icon.png" alt="Latte" />
+          <h3>Latte</h3>
+          <p class="description">Perpaduan espresso dan steamed milk yang creamy.</p>
+          <div class="price-badge">
+            <strong class="price">Rp 32.000</strong>
+            <span class="label"></span>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <img src="images/icon.png" alt="Cold Brew" />
+          <h3>Cold Brew</h3>
+          <p class="description">Diseduh dingin selama 12 jam untuk rasa yang smooth.</p>
+          <div class="price-badge">
+            <strong class="price">Rp 30.000</strong>
+            <span class="label new">New</span>
+          </div>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- KEUNGGULAN -->
-  <section class="features">
-    <div class="container">
+    <section class="why-choose-section container">
       <h2>Mengapa Memilih Kami?</h2>
       <div class="features-grid">
-        <div class="feature">
-          <h3>☕ Biji Kopi Premium</h3>
-          <p>Biji kopi pilihan dengan proses roasting terbaik.</p>
-        </div>
-        <div class="feature">
-          <h3>🛋️ Suasana Nyaman</h3>
-          <p>Tempat santai yang cocok untuk bekerja atau berbincang.</p>
-        </div>
-        <div class="feature">
-          <h3>📶 Wifi Gratis</h3>
-          <p>Nikmati koneksi cepat tanpa batas selama di kafe.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <article class="feature-card">
+          <img src="images/icon.png" alt="Biji Kopi Premium" />
+          <h3>Biji Kopi Premium</h3>
+          <p>Kopi kami berasal dari dataran tinggi dengan kualitas terbaik.</p>
+        </article>
 
-  <!-- FOOTER -->
+        <article class="feature-card">
+          <img src="images/icon.png" alt="Suasana Nyaman" />
+          <h3>Suasana Nyaman</h3>
+          <p>Tempat yang pas untuk kerja, ngobrol, atau bersantai bersama teman.</p>
+        </article>
+
+        <article class="feature-card">
+          <img src="images/icon.png" alt="Wifi Gratis" />
+          <h3>Wifi Gratis</h3>
+          <p>Koneksi stabil untuk kebutuhan kerja dan belajar.</p>
+        </article>
+
+        <article class="feature-card">
+          <img src="images/icon.png" alt="Pelayanan" />
+          <h3>Pelayanan Personal</h3>
+          <p>Barista ramah siap rekomendasi sesuai selera.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+
   <footer>
-    <div class="footer-container">
-      <div class="footer-box">
-        <h3>Kelompok 11</h3>
-        <p>105223022 - Calvin</p>
-        <p>105223022 - Umran</p>
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h3>Kontak Kami</h3>
+          <address>
+            <p>Jl. Taman Kemang No.19, RT.14/RW.1, Bangka, Kec.Mampang Prpt., Daerah Khusus Ibukota Jakarta 11180</p>
+            <p>📞 +62 8954111</p>
+            <p>📞 +62 8126031</p>
+            <p>📧 calvinsahatdua1@gmail.com</p>
+            <p>📧 zbourlyn@gmail.com</p>
+          </address>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Jam Operasional</h3>
+          <ul class="hours-list">
+            <li>Senin - Kamis: 07:00 - 22:00</li>
+            <li>Jumat - Sabtu: 07:00 - 23:00</li>
+            <li>Minggu: 08:00 - 22:00</li>
+          </ul>
       </div>
-
-      <div class="footer-box">
-        <h3>Menu Cepat</h3>
-        <a href="index.html">Home</a>
-        <a href="about.html">Tentang Kami</a>
-        <a href="menu.html">Menu</a>
-        <a href="reservation.html">Reservasi</a>
+        
+        <div class="footer-section">
+          <h3>Follow Kami</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="Facebook">Instagram</a>
+            <a href="#" aria-label="WhatsApp">WhatsApp</a>
+          </div>
+        </div>
       </div>
-
-      <div class="footer-box">
-        <h3>Kontak</h3>
-        <p>📞 +62 8954111</p>
-        <p>📞 +62 8126031</p>
-        <p>📧 calvinsahatdua1@gmail.com</p>
-        <p>📧 zbourlyn@gmail.com</p>
-      </div>
-
-      <div class="footer-box">
-        <h3>Sosial Media</h3>
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">WhatsApp</a>
+      
+      <div class="copyright">
+        <p>2025 &copy;All rights reserved Kopi Santai</p>
+        <p> Kelompok 11 | Dibuat oleh Calvin & Umran</p>
       </div>
     </div>
-    <p class="credit">© 2025 Kopi Santai | Dibuat oleh Calvin & Umran</p>
   </footer>
-
 </body>
 </html>

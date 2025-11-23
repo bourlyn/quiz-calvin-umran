@@ -1,421 +1,124 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kopi Santai - Tempat Santai Menikmati Kopi</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Reset dasar */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* HEADER */
-        header {
-            background: white;
-            padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo h1 {
-            color: #8B4513;
-            font-size: 28px;
-        }
-
-        .tagline {
-            color: #666;
-            font-style: italic;
-        }
-
-        .navigation {
-            display: flex;
-            gap: 30px;
-        }
-
-        .navigation a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .navigation a:hover {
-            color: #8B4513;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 150px 20px;
-            margin-top: 80px;
-        }
-
-        .hero-content h2 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero-content p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            display: inline-block;
-            transition: all 0.3s;
-        }
-
-        .button.primary {
-            background: #8B4513;
-            color: white;
-        }
-
-        .button.secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .button:hover {
-            transform: translateY(-2px);
-        }
-
-        /* MENU SECTION */
-        .menu-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-            color: #8B4513;
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .menu-item {
-            background: #f8f8f8;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .menu-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .menu-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-
-        .menu-item h3 {
-            color: #8B4513;
-            margin-bottom: 10px;
-        }
-
-        .price {
-            font-size: 20px;
-            font-weight: bold;
-            color: #8B4513;
-            margin-bottom: 10px;
-        }
-
-        /* FEATURES SECTION */
-        .features-section {
-            padding: 80px 0;
-            background: #f1e8e0;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .feature {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .feature-icon {
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
-
-        .feature h3 {
-            color: #8B4513;
-            margin-bottom: 15px;
-        }
-
-        /* FOOTER */
-        .footer {
-            background: #2c2c2c;
-            color: white;
-            padding: 50px 0 20px;
-        }
-
-        .box-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .box h3 {
-            color: #d7a86e;
-            font-size: 22px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #d7a86e;
-            padding-bottom: 10px;
-        }
-
-        .box a {
-            display: block;
-            color: #ddd;
-            text-decoration: none;
-            margin-bottom: 12px;
-            transition: color 0.3s;
-        }
-
-        .box a:hover {
-            color: #d7a86e;
-            transform: translateX(5px);
-        }
-
-        .box a i {
-            margin-right: 10px;
-            color: #d7a86e;
-        }
-
-        .credit {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #555;
-            font-size: 16px;
-            color: #ddd;
-        }
-
-        .credit span {
-            color: #d7a86e;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-            }
-            
-            .navigation {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .hero-content h2 {
-                font-size: 36px;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .button {
-                width: 200px;
-                text-align: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kopi Santai - Nikmati Setiap Tegukan</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <h1>Kopi Santai</h1>
-                <p class="tagline">Nikmati Setiap Tegukan</p>
-            </div>
-            
-            <nav class="navigation">
-                <a href="#home">Home</a>
-                <a href="menu.html">Menu</a>
-                <a href="about.html">About</a>
-                <a href="reservation.html">Reservasi</a>
-            </nav>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <h1 class="logo">Kopi Santai</h1>
+      <p class="tagline">Nikmati Setiap Tegukan</p>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">Tentang Kami</a>
+        <a href="reservation.html">Reservasi</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Selamat Datang di Kopi Santai</h2>
+      <p>Tempat terbaik untuk menikmati kopi dan bersantai bersama teman</p>
+      <div class="hero-buttons">
+        <a href="menu.html" class="btn primary">Lihat Menu</a>
+        <a href="reservation.html" class="btn secondary">Reservasi</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU FAVORIT -->
+  <section class="menu-section">
+    <div class="container">
+      <h2>Menu Favorit Kami</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <img src="images/2image.jpg" alt="Espresso Santai">
+          <h3>Espresso Santai</h3>
+          <p class="price">Rp 25.000</p>
+          <p>Espresso kuat dengan crema sempurna dari biji pilihan.</p>
         </div>
-    </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>Selamat Datang di Kopi Santai</h2>
-            <p>Tempat Terbaik untuk Bersantai dengan Secangkir Kopi</p>
-            <div class="hero-buttons">
-                <a href="menu.html" class="button primary">Lihat Menu</a>
-                <a href="reservation.html" class="button secondary">Reservasi Sekarang</a>
-            </div>
+        <div class="menu-item">
+          <img src="images/3image.jpg" alt="Cappuccino Harmony">
+          <h3>Cappuccino Harmony</h3>
+          <p class="price">Rp 32.000</p>
+          <p>Perpaduan espresso, susu steamed, dan foam lembut.</p>
         </div>
-    </section>
 
-    <!-- MENU FAVORIT -->
-    <section class="menu-section">
-        <div class="container">
-            <h2 class="section-title">Menu Favorit Kami</h2>
-            
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="images/2image.jpg" alt="kopi-1">
-                    <h3>Espresso Santai</h3>
-                    <p class="price">Rp 25.000</p>
-                    <p>Espresso kuat dengan crema sempurna dari biji kopi pilihan</p>
-                </div>
-                
-                <div class="menu-item">
-                    <img src="images/3image.jpg" alt="kopi-2">
-                    <h3>Cappuccino Harmony</h3>
-                    <p class="price">Rp 32.000</p>
-                    <p>Perpaduan espresso, susu steamed, dan foam yang lembut</p>
-                </div>
-                
-                <div class="menu-item">
-                    <img src="images/4image.jpg" alt="kopi-3">
-                    <h3>Iced Caramel Macchiato</h3>
-                    <p class="price">Rp 35.000</p>
-                    <p>Kopi dingin dengan rasa caramel manis, cocok untuk cuaca panas</p>
-                </div>
-                
-                <div class="menu-item">
-                    <img src="images/5image.jpg" alt="kopi-4">
-                    <h3>Club Sandwich</h3>
-                    <p class="price">Rp 42.000</p>
-                    <p>Sandwich dengan ayam panggang dan sayuran segar</p>
-                </div>
-            </div>
+        <div class="menu-item">
+          <img src="images/4image.jpg" alt="Iced Caramel Macchiato">
+          <h3>Iced Caramel Macchiato</h3>
+          <p class="price">Rp 35.000</p>
+          <p>Kopi dingin dengan rasa caramel manis, cocok untuk cuaca panas.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- KEUNGGULAN -->
-    <section class="features-section">
-        <div class="container">
-            <h2 class="section-title">Mengapa Memilih Kami?</h2>
-            
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">☕</div>
-                    <h3>Biji Kopi Premium</h3>
-                    <p>Kami menggunakan biji kopi pilihan dari perkebunan terbaik dengan proses roasting yang sempurna</p>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">🛋️</div>
-                    <h3>Suasana Nyaman</h3>
-                    <p>Interior yang dirancang khusus untuk kenyamanan Anda, cocok untuk bekerja atau bersantai</p>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">📶</div>
-                    <h3>Wifi Gratis</h3>
-                    <p>Nikmati koneksi internet cepat gratis selama Anda berada di kafe kami</p>
-                </div>
-            </div>
+  <!-- KEUNGGULAN -->
+  <section class="features">
+    <div class="container">
+      <h2>Mengapa Memilih Kami?</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <h3>☕ Biji Kopi Premium</h3>
+          <p>Biji kopi pilihan dengan proses roasting terbaik.</p>
         </div>
-    </section>
-
-    <!-- FOOTER -->
-    <section class="footer">
-        <div class="box-container">
-            <div class="box">
-                <h3>Kelompok 11</h3>
-                <a href="#"><li class="fas fa-arrow-right"></li> 105223022 - Calvin </a>
-                <a href="#"><li class="fas fa-arrow-right"></li> 105223022 - Umran</a>
-            </div>
-
-            <div class="box">
-                <h3>quick links</h3>
-                <a href="#home"><li class="fas fa-arrow-right"></li> home</a>
-                <a href="about.html"><li class="fas fa-arrow-right"></li> about</a>
-                <a href="menu.html"><li class="fas fa-arrow-right"></li> menu</a>
-                <a href="reservation.html"><li class="fas fa-arrow-right"></li> Reservation</a>
-            </div>
-
-            <div class="box">
-                <h3>contact info</h3>
-                <a href="#"><li class="fas fa-phone"></li> +62 8954111</a>
-                <a href="#"><li class="fas fa-phone"></li> +62 8126031</a>
-                <a href="#"><li class="fas fa-envelope"></li> calvinsahatdua1@gmail.com</a>
-                <a href="#"><li class="fas fa-envelope"></li> zbourlyn@gmail.com</a>
-            </div>
-
-            <div class="box">
-                <h3>Sosial Media</h3>
-                <a href="#"><li class="fab fa-instagram"></li> instagram</a>
-                <a href="#"><li class="fab fa-linkedin"></li> linkedin</a>
-                <a href="#"><li class="fab fa-instagram"></li> instagram</a>
-            </div>
+        <div class="feature">
+          <h3>🛋️ Suasana Nyaman</h3>
+          <p>Tempat santai yang cocok untuk bekerja atau berbincang.</p>
         </div>
-        <div class="credit">created by &copy;<span>mr. Calvin And mr. Umran</span> | all rights reserved</div>
-    </section>
+        <div class="feature">
+          <h3>📶 Wifi Gratis</h3>
+          <p>Nikmati koneksi cepat tanpa batas selama di kafe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-box">
+        <h3>Kelompok 11</h3>
+        <p>105223022 - Calvin</p>
+        <p>105223022 - Umran</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Menu Cepat</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">Tentang Kami</a>
+        <a href="menu.html">Menu</a>
+        <a href="reservation.html">Reservasi</a>
+      </div>
+
+      <div class="footer-box">
+        <h3>Kontak</h3>
+        <p>📞 +62 8954111</p>
+        <p>📞 +62 8126031</p>
+        <p>📧 calvinsahatdua1@gmail.com</p>
+        <p>📧 zbourlyn@gmail.com</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Sosial Media</h3>
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+    <p class="credit">© 2025 Kopi Santai | Dibuat oleh Calvin & Umran</p>
+  </footer>
+
 </body>
 </html>

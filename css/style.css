@@ -1,6 +1,6 @@
 /* ========================================
-   KOPI SANTAI - COMPLETE STYLESHEET
-   Updated & Fixed for All Pages
+   KOPI SANTAI - STYLE.CSS (Non-Responsive)
+   Hanya berisi: reset, utility, komponen, layout dasar
 ======================================== */
 
 /* ===== CSS VARIABLES ===== */
@@ -168,63 +168,6 @@ nav a.active::after {
   width: 100%; 
 }
 
-/* ===== HERO SECTION ===== */
-.hero-section {
-  min-height: calc(100vh - var(--header-height));
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bg.jpg');
-  background-color: var(--text-dark);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--white);
-  padding: 60px 20px;
-}
-
-.hero-content {
-  max-width: 900px;
-  width: 100%;
-}
-
-.hero-text h2,
-.hero-content h2 {
-  font-size: 3.5rem;
-  color: var(--white);
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  line-height: 1.2;
-}
-
-.hero-text p,
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: rgba(255,255,255,0.9);
-}
-
-.hero-image {
-  margin-top: 2rem;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-image img {
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-hover);
-}
-
-.hero-buttons {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
 /* ===== BUTTONS ===== */
 .btn {
   display: inline-block;
@@ -269,16 +212,43 @@ section {
   padding: 4rem 0;
 }
 
-section h2 {
-  margin-bottom: 3rem;
+/* ===== HERO SECTION ===== */
+.hero-section {
+  min-height: calc(100vh - var(--header-height));
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding: 60px 20px;
 }
 
-/* ===== FEATURED MENU (Homepage) ===== */
-.featured-menu-section,
-.why-choose-section {
-  background-color: var(--white);
+.hero-content h2 {
+  font-size: 3.5rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  line-height: 1.2;
 }
 
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: rgba(255,255,255,0.9);
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ===== CARD GRID LAYOUT (Homepage) ===== */
 .menu-grid,
 .features-grid {
   display: grid;
@@ -347,22 +317,12 @@ section h2 {
   font-weight: 700;
 }
 
-/* ===== MENU PAGE LAYOUT ===== */
+/* ===== MENU PAGE ===== */
 .menu-layout {
   padding: 3rem 0;
 }
 
-.menu-container {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-}
-
 .filter-sidebar {
-  flex: 0 0 250px;
-  position: sticky;
-  top: 100px;
-  height: fit-content;
   background: var(--white);
   padding: 20px;
   border-radius: var(--border-radius);
@@ -381,12 +341,7 @@ section h2 {
   gap: 10px;
 }
 
-/* Hide radio buttons */
-.category-nav input[type="radio"] {
-  display: none;
-}
-
-/* Style labels as buttons */
+/* BUTTON FILTER YANG BENAR (SESUAI DATA-CATEGORY) */
 .category-btn {
   display: block;
   padding: 12px 20px;
@@ -405,48 +360,15 @@ section h2 {
 .category-btn:hover {
   background-color: var(--secondary-color);
   color: white;
-  transform: translateX(5px);
 }
 
-/* Active state when radio is checked */
-.category-nav input[type="radio"]:checked + .category-btn {
+.category-btn.active {
   background-color: var(--primary-color);
   color: white;
   border-color: var(--primary-color);
-  transform: translateX(5px);
 }
 
-/* PURE CSS FILTER - Show all by default */
-.menu-card {
-  display: flex;
-}
-
-/* Hide specific categories based on radio selection */
-#coffee:checked ~ .menu-content .menu-card:not(.coffee) {
-  display: none;
-}
-
-#non-coffee:checked ~ .menu-content .menu-card:not(.non-coffee) {
-  display: none;
-}
-
-#food:checked ~ .menu-content .menu-card:not(.food) {
-  display: none;
-}
-
-#snacks:checked ~ .menu-content .menu-card:not(.snacks) {
-  display: none;
-}
-
-/* Show all when 'all' is checked (default) */
-#all:checked ~ .menu-content .menu-card {
-  display: flex;
-}
-
-.menu-content {
-  flex: 1;
-}
-
+/* MENU GRID */
 .menu-content > h2 {
   text-align: left;
   margin-bottom: 2rem;
@@ -493,14 +415,6 @@ section h2 {
   flex-grow: 1;
 }
 
-/* Labels */
-.menu-label {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 10;
-}
-
 .label {
   padding: 6px 14px;
   border-radius: 20px;
@@ -520,16 +434,6 @@ section h2 {
 }
 
 /* ===== ABOUT PAGE ===== */
-.story-section,
-.values-section,
-.location-section {
-  padding: 4rem 0;
-}
-
-.story-section {
-  background-color: var(--white);
-}
-
 .story-content {
   display: flex;
   gap: 50px;
@@ -573,11 +477,6 @@ blockquote {
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
 }
 
-/* Values Section */
-.values-section {
-  background-color: var(--bg-light);
-}
-
 .values-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -612,11 +511,6 @@ blockquote {
 }
 
 /* ===== GALLERY ===== */
-.gallery-section {
-  padding: 4rem 0;
-  background-color: var(--white);
-}
-
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -667,11 +561,7 @@ blockquote {
   transform: translateY(0);
 }
 
-/* ===== LOCATION SECTION ===== */
-.location-section {
-  background-color: var(--bg-light);
-}
-
+/* ===== LOCATION ===== */
 .location-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -720,10 +610,6 @@ blockquote {
   font-weight: 600;
 }
 
-.hours-table tr:hover {
-  background-color: var(--bg-light);
-}
-
 .map-container {
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -732,13 +618,7 @@ blockquote {
   min-height: 400px;
 }
 
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 400px;
-}
-
-/* ===== RESERVATION PAGE ===== */
+/* ===== RESERVATION ===== */
 .reservation-info {
   background-color: var(--white);
   padding: 3rem 0;
@@ -754,11 +634,6 @@ blockquote {
   margin: 0 auto 2rem;
   font-size: 1.1rem;
   color: var(--text-light);
-}
-
-.reservation-info h3 {
-  margin: 2rem 0 1rem;
-  text-align: center;
 }
 
 .reservation-info ul {
@@ -783,7 +658,6 @@ blockquote {
 }
 
 .form-column {
-  flex: 2;
   background: var(--white);
   padding: 30px;
   border-radius: var(--border-radius);
@@ -791,34 +665,16 @@ blockquote {
 }
 
 .info-column {
-  flex: 1;
   background: var(--bg-light);
   padding: 30px;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-  position: sticky;
-  top: 100px;
 }
 
 .info-column h3,
 .info-column h4 {
   color: var(--primary-color);
   margin-bottom: 1rem;
-}
-
-.info-column p {
-  margin-bottom: 1rem;
-  color: var(--text-dark);
-}
-
-.info-column ul {
-  margin: 1rem 0;
-  padding-left: 0;
-}
-
-.info-column ul li {
-  margin-bottom: 0.5rem;
-  color: var(--text-dark);
 }
 
 /* ===== FORMS ===== */
@@ -974,61 +830,7 @@ footer {
   margin-bottom: 0.5rem;
 }
 
-/* ===== ANIMATIONS ===== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.menu-card,
-.gallery-item,
-.feature-card,
-.values-list li {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
 /* ===== UTILITIES ===== */
 .text-center {
   text-align: center;
-}
-
-.mt-1 { margin-top: 1rem; }
-.mt-2 { margin-top: 2rem; }
-.mb-1 { margin-bottom: 1rem; }
-.mb-2 { margin-bottom: 2rem; }
-
-/* ===== ACCESSIBILITY ===== */
-:focus-visible {
-  outline: 3px solid var(--secondary-color);
-  outline-offset: 2px;
-}
-
-/* ===== PRINT STYLES ===== */
-@media print {
-  header,
-  footer,
-  .hero-section,
-  .gallery-section,
-  nav,
-  .btn {
-    display: none;
-  }
-
-  body {
-    background: white;
-    color: black;
-  }
-
-  .menu-card,
-  .values-list li {
-    break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid #ddd;
-  }
 }
